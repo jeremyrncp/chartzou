@@ -1,0 +1,149 @@
+<script src="node_modules/gridstack/dist/gridstack-h5.js"></script>
+<script src="node_modules/highcharts/highcharts.js"></script>
+<script src="node_modules/highcharts/highcharts-3d.js"></script>
+<script src="node_modules/highcharts/highcharts-more.js"></script>
+<script src="node_modules/highcharts/modules/data.js"></script>
+<script src="node_modules/highcharts/modules/solid-gauge.js"></script>
+<link href="node_modules/gridstack/dist/gridstack.min.css" rel="stylesheet"/>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+
+
+<style type="text/css">
+  .grid-stack { background: #636361; }
+  .grid-stack-item-content { background-color: rgba(255, 255, 255, 0.521); border:1px solid rgba(0, 0, 0, 200); }
+</style>
+
+<div id="firebaseui-auth-container"></div>
+<div class="grid-stack"></div>
+
+<script type="text/javascript">
+    const hightChartsOptions = {
+  "title": {
+    "text": "My Chart"
+  },
+  "subtitle": {
+    "text": "My Untitled Chart"
+  },
+  "exporting": {},
+  "chart": {
+    "type": "pie",
+    "polar": false
+  },
+  "plotOptions": {
+    "pie": {
+      "allowPointSelect": true,
+      "cursor": true,
+      "innerSize": "60%",
+      "dataLabels": {
+        "enabled": true
+      }
+    },
+    "series": {
+      "animation": false
+    }
+  },
+  "series": [
+    {
+      "name": "Column 2",
+      "turboThreshold": 0
+    }
+  ],
+  "data": {
+    "csv": "\"Column 1\";\"Column 2\"\n\"test\";25\"\n\"essai\";45",
+    "googleSpreadsheetKey": false,
+    "googleSpreadsheetWorksheet": false
+  },
+  "yAxis": {
+    "title": {}
+  }
+}
+    </script>
+<script type="text/javascript">
+  var items = [
+  {
+    "x": 0,
+    "y": 0,
+    "w": 6,
+    "h": 6,
+    "id": "0",
+    "content": "<button onclick=\"grid.removeWidget(this.parentNode.parentNode)\">X</button><br> <div id='container'></div><br> "
+  },
+  {
+    "x": 3,
+    "y": 0,
+    "h": 2,
+    "id": "1",
+    "content": "<button onclick=\"grid.removeWidget(this.parentNode.parentNode)\">X</button><br> 1<br> <button onclick=\"alert('clicked!')\">Press me</button>",
+    "w": 1
+  },
+  {
+    "x": 4,
+    "y": 0,
+    "id": "2",
+    "content": "<button onclick=\"grid.removeWidget(this.parentNode.parentNode)\">X</button><br> 2<br> ",
+    "w": 1,
+    "h": 1
+  },
+  {
+    "x": 1,
+    "y": 2,
+    "id": "4",
+    "content": "<button onclick=\"grid.removeWidget(this.parentNode.parentNode)\">X</button><br> 4<br> ",
+    "w": 1,
+    "h": 1
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "w": 3,
+    "id": "3",
+    "content": "<button onclick=\"grid.removeWidget(this.parentNode.parentNode)\">X</button><br> 3<br> ",
+    "h": 1
+  }
+];
+
+  var grid = GridStack.init();
+  grid.load(items);
+
+  grid.on('change', (event) => {
+    Highcharts.chart('container', hightChartsOptions);
+  })
+
+Highcharts.chart('container', hightChartsOptions);
+
+var firebaseConfig = {
+    apiKey: "AIzaSyC42R4s7Y1-_09YomRBOWJrtkssAg_Zq9c"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user)
+  } else {
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+        {
+        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        requireDisplayName: false
+        }
+    ]
+    });
+  }
+});
+
+
+</script>
