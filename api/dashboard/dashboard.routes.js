@@ -9,7 +9,7 @@ module.exports = Router => {
 
   router
     .get('/:dashboardId', controller.getOne)
-    .get('/', controller.getAll)
+    /**.get('/', controller.getAll)*/
     .post('/', controller.save)
     .post('/share', controller.share)
     .delete('/:dashboardId', controller.deleteOne)
