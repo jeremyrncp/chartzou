@@ -1,0 +1,12 @@
+_autodiscover._tcp        IN SRV    0 0 443 mailconfig.ovh.net.
+_imaps._tcp               IN SRV    0 0 993 ssl0.ovh.net.
+_submission._tcp          IN SRV    0 0 465 ssl0.ovh.net.
+autoconfig                IN CNAME  mailconfig.ovh.net.
+autodiscover              IN CNAME  mailconfig.ovh.net.
+corsanywhere              IN CNAME  cors-anywhere-o5izc.ondigitalocean.app.
+em7356                    IN CNAME  u21636566.wl067.sendgrid.net.
+ftp                       IN CNAME  chartzou.com.
+s1._domainkey             IN CNAME  s1.domainkey.u21636566.wl067.sendgrid.net.
+s2._domainkey             IN CNAME  s2.domainkey.u21636566.wl067.sendgrid.net.
+www                       IN A      213.186.33.5
+www                       IN TXT    "3|welcome"
