@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}ChartZou{% endblock %}</title>
+        <base href="/" />  
+        <script type="text/javascript" src="app.js"></script>
+        <script src="http://code.highcharts.com/stock/highstock.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.highcharts.com/maps/modules/map.js" type="text/javascript" charset="utf-8"></script>
+            
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.18.2/codemirror.min.js'></script>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.18.2/codemirror.min.css' type="text/css" rel="stylesheet"></link>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.18.2/theme/neo.min.css' type="text/css" rel="stylesheet"></link>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.18.2/mode/javascript/javascript.min.js'></script> 
+
+        <script src="https://code.highcharts.com/adapters/standalone-framework.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.highcharts.com/highcharts-3d.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.highcharts.com/modules/data.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/funnel.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-cnter">
+                    <h1 class="text-uppercase">{{ dashboard.name }}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="grid-stack"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var dashboardImport = {{ dashboard|json_encode|raw }};
+            </script>
+            <script type="text/javascript" src="dashboardview.js"></script>
+        </div>
+        <!-- Navigation -->
+        <nav class="navbar-light bg-light static-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="img/logo_transparent.png" width="250" /></a>
+            </div>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'chartzou::app/dashboard/new.twig' %}
+{% block title %}View dashboard - ChartZou{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6 text-left">
+            <h3>{{ dashboard.name }}</h3>
+        </div>
+        <div class="col-6 text-right">
+            <a class="btn btn-secondary" href="/dashboard/edit/{{ dashboard.id }}">Edit</a> <a class="btn btn-primary" href="/dashboard">Dashboard list</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="grid-stack"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    var dashboardImport = {{ dashboard|json_encode|raw }};
+</script>
+<script type="text/javascript" src="dashboardview.js"></script>
+{% endblock %}

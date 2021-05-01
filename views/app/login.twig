@@ -1,0 +1,20 @@
+{% extends "views/base.twig" %}
+
+{% block head %}
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+{% endblock %}
+
+
+{% block content %}
+  <!-- Icons Grid -->
+  <section class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 pt-5 pb-5 text-right">
+            <div id="firebaseui-auth-container"></div>
+            <div class="grid-stack"></div>
+            <script type="text/javascript" src="login.js"></script>
+        </div>
+    </div>
+  </section>
+{% endblock %}

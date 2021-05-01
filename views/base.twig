@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}ChartZou : build your own business intelligence dashboard{% endblock %}</title>
+        <base href="/" />  
+        <script type="text/javascript" src="app.js"></script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+      <!-- Navigation -->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+            <a class="navbar-brand" href="/"><img src="img/logo_transparent.png" width="250" /></a>
+            {% if user is defined %}
+                {{ user.email }}
+            {% else %}
+                <a class="btn btn-primary" href="/dashboard">Sign In</a>
+            {% endif %}
+            </div>
+        </nav>
+        {% block content %}
+            <p>Hello world</p>
+        {% endblock %}
+          <footer class="footer bg-light">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item">
+                    <a href="/about">About</a>
+                    </li>
+                    <li class="list-inline-item">&sdot;</li>
+                    <li class="list-inline-item">
+                    <a href="/contact">Contact</a>
+                    </li>
+                    <li class="list-inline-item">&sdot;</li>
+                    <li class="list-inline-item">
+                    <a href="/term-of-user">Terms of Use</a>
+                    </li>
+                    <li class="list-inline-item">&sdot;</li>
+                    <li class="list-inline-item">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; ChartZou 2021. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mr-3">
+                        <a href="https://twitter.com/ZouChart" target="_blank">
+                            <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>

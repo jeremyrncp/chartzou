@@ -1,0 +1,9 @@
+{% extends 'chartzou::app/dashboard/new.twig' %}
+{% block title %}Edit dashboard - ChartZou{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+        var dashboardImport = {{ dashboard|json_encode|raw }};
+    </script>
+    {{ parent() }}
+{% endblock %}
