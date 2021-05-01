@@ -4,12 +4,11 @@ const fs = require('fs');
 const path = require('path');
 const Router = require('koa-router');
 
-const { apiVersion } = require('../config').server;
 const baseName = path.basename(__filename);
 
 function applyApiMiddleware(app) {
   const router = new Router({
-    prefix: `/api/${apiVersion}`,
+    prefix: `/api`,
   });
 
   // Require all the folders and create a sub-router for each feature api

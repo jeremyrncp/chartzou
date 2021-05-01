@@ -5,17 +5,7 @@
 <script src="node_modules/highcharts/modules/data.js"></script>
 <script src="node_modules/highcharts/modules/solid-gauge.js"></script>
 <link href="node_modules/gridstack/dist/gridstack.min.css" rel="stylesheet"/>
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
 
 
@@ -30,26 +20,20 @@
 <script type="text/javascript">
     const hightChartsOptions = {
   "title": {
-    "text": "My Chart"
+    "text": "Nombre de"
   },
   "subtitle": {
     "text": "My Untitled Chart"
   },
   "exporting": {},
   "chart": {
-    "type": "pie",
+    "type": "column",
+    "inverted": true,
     "polar": false
   },
   "plotOptions": {
-    "pie": {
-      "allowPointSelect": true,
-      "cursor": true,
-      "innerSize": "60%",
-      "dataLabels": {
-        "enabled": true
-      }
-    },
     "series": {
+      "stacking": "normal",
       "animation": false
     }
   },
@@ -60,7 +44,7 @@
     }
   ],
   "data": {
-    "csv": "\"Column 1\";\"Column 2\"\n\"test\";25\"\n\"essai\";45",
+    "csv": "\"Column 1\";\"Column 2\"\n\"essai\";25\n\"essai\";96",
     "googleSpreadsheetKey": false,
     "googleSpreadsheetWorksheet": false
   },
