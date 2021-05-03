@@ -40,7 +40,7 @@ const editOrView = async (mode, ctx) => {
     await ctx.db.collection("grids").doc(dashboardId)
     .get()
     .then((grid) => {
-        if (grid.exists && grid.data().user == ctx.session.user.uid) {
+        if (grid.exists && (mode === 'share' || grid.data().user == ctx.session.user.uid)) {
             return ctx.render('app/dashboard/' + mode + '.twig', {'user': ctx.session.user, 'dashboard': grid.data()})
         } else {
             ctx.status = 404
