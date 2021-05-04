@@ -14,7 +14,7 @@ document.querySelectorAll(".btn-share-dashboard").forEach((elm) => {
         let dashboardId = event.target.attributes.getNamedItem('data-dashboard-id').value
 
         document.querySelector("#share-modal .modal-body").innerHTML = "<label for='share-external-dashboard'><b>Public dashboard link</b> <button id='btn-copy-dashboard' class='btn btn-sm btn-secondary'>Copy</button></label>" +
-        "<input id='share-external-dashboard' type='text' class='form-control' value='https://chartzou.com/external/dashboard/share/" + dashboardId + "' />" +
+        "<input id='share-external-dashboard' type='text' class='form-control' value='http://chartzou.com/external/dashboard/share/" + dashboardId + "' />" +
         "<br /><br /><h5>Send dashboard link by email</h5>" +
         "<input id='share-external-dashboard-email' type='email' class='form-control' placeholder='Email address' />"
 
