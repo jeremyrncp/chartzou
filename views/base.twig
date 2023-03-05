@@ -8,6 +8,15 @@
         <title>{% block title %}ChartZou : build your own business intelligence dashboard{% endblock %}</title>
         <base href="/" />  
         <script type="text/javascript" src="app.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9GN78F16F"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-S9GN78F16F');
+        </script>
         {% block head %}{% endblock %}
     </head>
     <body>
@@ -46,7 +55,7 @@
                     <a href="/privacy-policy">Privacy Policy</a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-4 mb-lg-0">&copy; ChartZou 2021. All Rights Reserved.</p>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; ChartZou 2023. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
                 <ul class="list-inline mb-0">

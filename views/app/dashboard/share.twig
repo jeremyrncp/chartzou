@@ -8,6 +8,15 @@
         <title>{% block title %}ChartZou{% endblock %}</title>
         <base href="/" />  
         <script type="text/javascript" src="app.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9GN78F16F"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-S9GN78F16F');
+        </script>
         <script src="https://code.highcharts.com/stock/highstock.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://code.highcharts.com/maps/modules/map.js" type="text/javascript" charset="utf-8"></script>
             
