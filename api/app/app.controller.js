@@ -25,7 +25,7 @@ exports.contact = async ctx => {
         to:  'contact@gaultierweb.com',
         reply_to: ctx.request.body.email,
         from: 'contact@chartzou.com',
-        template_id: 'd-711d523ce1ce4cc99af1d7fe3385661',
+        template_id: 'd-711d523ce1ce4cc99af1d7fe33856617',
         dynamic_template_data: {
             email: ctx.request.body.email,
             message: ctx.request.body.message
