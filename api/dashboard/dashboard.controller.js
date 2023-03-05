@@ -95,11 +95,11 @@ exports.save = async ctx => {
 exports.share = async ctx => {
     const msg = {
         to:  ctx.request.body.email,
-        from: 'noreply@chartzou.com',
+        from: 'contact@chartzou.com',
         dynamic_template_data : {
             dashboardId: ctx.request.body.dashboardId,
         },
-        template_id: 'd-964063011e6344d98f025d9ed12860b4'
+        template_id: 'd-c715ded3400241e4a6c21b8d2efa3281'
     }
     await ctx.mail.send(msg)
     .then(() => {
