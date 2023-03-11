@@ -40,7 +40,10 @@ const editOrView = async (mode, ctx) => {
     await ctx.db.collection("grids").doc(dashboardId)
     .get()
     .then((grid) => {
-        if (grid.exists && grid.data().user == ctx.session.user.uid) {
+        if(mode === 'share') {
+            return ctx.render('app/dashboard/' + mode + '.twig', {'dashboard': grid.data()})
+        }
+        else if (grid.exists && grid.data().user == ctx.session.user.uid) {
             return ctx.render('app/dashboard/' + mode + '.twig', {'user': ctx.session.user, 'dashboard': grid.data()})
         } else {
             ctx.status = 404
@@ -48,6 +51,7 @@ const editOrView = async (mode, ctx) => {
         }
     })
     .catch((error) => {
+        console.log(error)
         ctx.status = 500
         ctx.body = JSON.stringify({'status': 'error', 'message': error})
     });
